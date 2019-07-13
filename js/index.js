@@ -1,0 +1,26 @@
+//$(document).ready(function(){当DOM树加载完成就提前执行↓简写
+$(function(){
+  $(".top_nav>div:nth-child(2)").hover(
+    function(){
+      $(".icon-xia").toggleClass("icon-shang")
+    }  
+  )
+})
+$(function(){
+  $(".top_input").focus(function(){
+    $(this).parent().toggleClass("border");
+  })
+  $(".top_input").blur(function(){
+    $(this).parent().removeClass("border");
+  })
+})
+$(function(){
+  $.ajax({
+    url:"",
+    type:"get",
+    success:function(result){
+      $(result).repalceAll('header');
+      $(`<link rel="stylesheet" href="css/header.css">`).appendTo("head");
+    }
+  })
+})
